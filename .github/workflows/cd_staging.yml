@@ -2,8 +2,7 @@ name: Deploy to Staging
 
 on:
   push:
-    branches:
-      - "main"
+    branches: [main]
 
 jobs:
     
@@ -11,8 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         name: Deploying everything to staging cluster
         steps:
-            name: SSH into server
-            run: |
+            - run: |
                 echo ${{ secrets.PRIVATE_SSH_KEY }} &> ~/ssh_key
                 ssh -i ~/ssh_key root@13.233.120.6
                 cd /ci-cd-advanced/ && git pull
