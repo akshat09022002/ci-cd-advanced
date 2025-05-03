@@ -22,8 +22,8 @@ jobs:
           key: ${{secrets.PRIVATE_SSH_KEY}}
           port: 22
           script: |
-            export PATH="/home/ubuntu/.local/share/pnpm:$PATH"
-            export PATH="/home/ubuntu/.npm-global/bin:$PATH"
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd ci-cd-advanced
             git pull
             pnpm install
