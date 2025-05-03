@@ -1,9 +1,9 @@
-name: Deploy to Staging
+name: deploy-to-staging
 
 on:
   push:
     branches: 
-        -main
+      - main
 
 jobs:
   deploy:
@@ -19,7 +19,7 @@ jobs:
         with:
           host: 13.233.120.6
           username: ubuntu
-          key: ${{ secrets.PRIVATE_SSH_KEY}}
+          key: ${{secrets.PRIVATE_SSH_KEY}}
           port: 22
           script: |
             cd ci-cd-advanced
